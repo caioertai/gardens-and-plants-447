@@ -13,6 +13,7 @@ Onboarding:
   bundle install
   yarn install
   rails db:create db:migrate db:seed
+  # rake db:seed:replant # <---- you may want to do this if you want to reset the app DB to the initial seeds
 ```
 Running the app:
 ```bash
@@ -24,10 +25,12 @@ Running the app:
 ### User Stories
 
 ```
-As a user I can see one garden's plants
-As a user I can add a plant in a garden
-As a user I can delete a plant
+- [x] As a user I can see plants of a garden
+- [x] As a user I can add a plant in a garden
+- [x] As a user I can delete a plant
 ```
+
+<!-- /gardens/:garden_id/plants/new -->
 
 ### Front End Setup Guidelines
 
@@ -37,8 +40,6 @@ https://github.com/lewagon/rails-stylesheets/blob/master/README.md
 
 ```ruby
 # db/seeds.rb
-Garden.destroy_all if Rails.env.development?
-
 Garden.create!(
   name: "My Little Garden",
   banner_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/garden_1.jpg"
